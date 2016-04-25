@@ -1,6 +1,5 @@
 - name: "Guitar Collection"
-  url: "http://github.com/ryuichi7/guitar_collection"
-  description: "Site built using Sinatra to list a users guitars, amps and pedals"
+  description: "Site built using Sinatra to list a users guitars, amps and pedals."
   icon: chevron-right
   img: "Garage-Band-icon.png"
   languages: 
@@ -10,10 +9,21 @@
   url: "http://github.com/ryuichi7/guitar_collection"
 
 - name: "Best Whiskey Gem"
-  description: "A Gem that allows users to browse the best whiskeys of the year through a CLI"
+  description: "A Gem that allows users to browse the best whiskeys of the year through a CLI."
   icon: chevron-right
   img: "Whiskey-icon.png"
   languages:
   - name: Ruby
   url: "http://github.com/ryuichi7/best_whiskey"
+
+- name: "Tummy Topics"
+  description: "Ruby on Rails app where users can list their recipes and get comments and ratings from other users. Check out the experimental branch to see some of my javascript implementations."
+  icon: chevron-right
+  img: "fork.png"
+  languages:
+  - name: Ruby
+  - name: Ruby on Rails
+  - name: Bootstrap
+  - name: Java Script
+  url: "https://github.com/ryuichi7/tummy_topics"
   

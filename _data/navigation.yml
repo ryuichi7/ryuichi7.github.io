@@ -5,19 +5,24 @@
 
 - title: Projects
   url: "/projects/"
-  icon: edit
+  icon: archive
   side: left
-
-
 
 - title: Blog
   url: "/blog/"
+  icon: edit
   side: left
   dropdown:
   - title: "Blog Archive"
     url: "/blog/archive/"
 
+- title: About
+  url: "/about/"
+  icon: globe
+  side: left
+
 
 - title: "Contact"
   url: "/contact/"
+  icon: mail
   side: left
