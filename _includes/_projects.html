@@ -1,0 +1,22 @@
+<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+  {% for project in site.data.projects %}
+  {% if project.url contains 'http' %}{% assign urldomain = '' %}{% else %}{% assign urldomain = site.url + site.baseurl %}{% endif %}
+  <li class="project-item">
+    <a href="{{ project.url }}"{% if project.url contains 'http' %} target="_blank"{% endif %}>
+      <img src="{{ site.urlimg }}{{ project.img }}">
+      <h4 class='text-centered'>{{ project.name }}</h4>
+    </a>
+    <dl class="accordion" data-accordion>
+      <dd class="accordion-navigation" style="margin-left: 0;">
+        <a href="#panel{{ forloop.index }}"><span class="icon-{{ project.icon }}"></span> Details</a>
+        <div id="panel{{ forloop.index }}" class="content">
+          <ul>{% for language in project.languages %}<li>{{ language.name }}</li>{% endfor %}</ul>
+          <p>{{ project.description }}</p>
+        </div>
+      </dd>
+    </dl>
+  </li>
+  {% endfor %}
+</ul>
+
+

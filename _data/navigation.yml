@@ -1,0 +1,23 @@
+- title: Home
+  url: "/"
+  icon: home
+  side: left
+
+- title: Projects
+  url: "/projects/"
+  icon: edit
+  side: left
+
+
+
+- title: Blog
+  url: "/blog/"
+  side: left
+  dropdown:
+  - title: "Blog Archive"
+    url: "/blog/archive/"
+
+
+- title: "Contact"
+  url: "/contact/"
+  side: left
