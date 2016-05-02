@@ -48,6 +48,7 @@ DEPENDENCIES
   jekyll (= 3.0.2)
   jekyll-gist
   jekyll-paginate
+  rouge
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
