@@ -15,7 +15,7 @@ categories:
 
 Recently, I've been introduced to javascript and the world of ansynchronous HTTP requests. Asynchronous JavaScript and XML, or AJAX for short, is a concept that allows you to make requests to a server and render the response in the DOM without reloading the page. The javascript library, jQuery, possesses a handy function just for these purposes, `jQuery.ajax()` .
 
-###AJAX and callbacks
+### AJAX and callbacks
 
 First, let's dicuss a little about how AJAX calls are made and how they utilize callbacks to render information. Normally when a request is made to a server, the whole page has to referesh to render the response. With AJAX, an XMLHttpRequest object is created and a request is made to a server but the DOM (Document Object Model) remains "unlocked" while waiting for the response. In turn, the user is free to continue browsing while server requests are being made. Once the response is returned, AJAX handles said response through the use of callbacks. 
 
