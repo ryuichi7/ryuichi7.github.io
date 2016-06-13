@@ -463,7 +463,7 @@ def index
 	  f.json { render json: @recipes }
 	end
 end
-{% end highlight %}
+{% endhighlight %}
 
 This created a much smoother user experience. Instead of having to paginate, the user simply scrolls to the bottom and the next set of recipes appears on the page.
 
@@ -507,7 +507,7 @@ $(document).bind('ajaxError','form#new_comment', function(event, xhr, settings) 
 could become
 
 {% highlight js %}
-$('form#new_comment').bind('ajax:error', function(event, xhr, settings) {})`
+$('form#new_comment').bind('ajax:error', function(event, xhr, settings) {});
 {% endhighlight %} 
 
 but in this case the first version worked well for me, so I stuck with it.
