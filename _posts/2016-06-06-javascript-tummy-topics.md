@@ -219,7 +219,7 @@ After all this, I was able to add new ingredient fields with one click and leave
 
 ![ingredients-fields image]({{ site.urlimg }}ingredient-fields.png)
 
-##Scroll and Load
+## Scroll and Load
 
 To further add to user experience, I wanted to be able to load recipes on the main index page without having to paginate or click on a link to load more. If this site were ever to actually be populated with a large number of recipes, the index page would take far too long loading the whole list of recipes in one request. 
 
@@ -448,6 +448,23 @@ function getMoreRecipes(data) {
 }
 {% endhighlight %}
 
+and the corresponding call in the `recipes_controller`
+
+{% highlight ruby %}
+# controllers/recipes_controller.rb
+def index
+	if params[:user_id]
+		@recipes = User.find(params[:user_id]).recipes.alphabetized
+	else
+		@recipes = Recipe.alphabetized.limit(9).offset(params[:limit])
+	end
+	respond_to do |f|
+		f.html { render :layout => 'recipe_index' }
+	  f.json { render json: @recipes }
+	end
+end
+{% end highlight %}
+
 This created a much smoother user experience. Instead of having to paginate, the user simply scrolls to the bottom and the next set of recipes appears on the page.
 
 ## Errors
@@ -481,7 +498,19 @@ $(document).bind('ajaxSuccess','form#new_comment', function(event, xhr, settings
 })
 {% endhighlight %}
 
-I believe in rails you can bind directly to the events triggered via jQuery-UJS. Hence, `$(document).bind('ajaxError','form#new_comment', function(event, xhr, settings) {});` could become `$('form#new_comment').bind('ajax:error', function(event, xhr, settings) {})`, but in this case the first version worked well for me, so I stuck with it.
+I believe in rails you can bind directly to the events triggered via jQuery-UJS. Hence, 
+
+{% highlight js %}
+$(document).bind('ajaxError','form#new_comment', function(event, xhr, settings) {}); 
+{% endhighlight %}
+
+could become
+
+{% highlight js %}
+$('form#new_comment').bind('ajax:error', function(event, xhr, settings) {})`
+{% endhighlight %} 
+
+but in this case the first version worked well for me, so I stuck with it.
 
 ## Thoughts and TODOs
 
